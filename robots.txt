@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /contact.html
+Disallow: /privacy-policy.html
+Disallow: /terms-of-service.html
+
+Sitemap: https://realmultitool.com/sitemap.xml
