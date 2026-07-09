@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | MultiTool</title>
+    
+    <!-- Crucial SEO Tag: Tells Google NOT to index this error page -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Links to your existing CSS file -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .error-section {
+            text-align: center;
+            padding: 10vh 5%;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .error-code {
+            font-size: 6rem;
+            color: var(--primary-color);
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        /* Trust Footer styling (Copied directly from your main pages) */
+        .trust-footer {
+            text-align: center;
+            padding: 3rem 5% 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--card-bg);
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        .footer-copy {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a class="logo">Multi<span>Tool</span></a>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <!-- Dropdown Menu -->
+                <li class="dropdown">
+                    <a href="index.html#tools" class="dropbtn">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="Resizer/index.html">Image Resizer</a>
+                        <a href="Converter/index.html">File Converter</a>
+                    </div>
+                </li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Error Content -->
+    <main>
+        <section class="error-section fade-in">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Oops! We couldn't find the page you're looking for.</p>
+            <p style="margin-bottom: 2rem;">It might have been moved, or the link you clicked is broken.</p>
+            <a href="index.html" class="btn primary-btn">Return to Homepage</a>
+        </section>
+    </main>
+
+    <!-- Trust Footer -->
+    <footer class="trust-footer">
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 MultiTool. All rights reserved.</p>
+    </footer>
+
+    <!-- Links to your existing JS file so the dark mode toggle works -->
+    <script src="script.js"></script>
+</body>
+</html>

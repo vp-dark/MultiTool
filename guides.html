@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Hub & Guides | MultiTool</title>
+    <meta name="description" content="Read our latest guides on image compression, file formats, and social media optimization to improve your web performance.">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .guides-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+        .guides-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .guides-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .guides-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        /* Grid Layout for the Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        /* Individual Article Cards */
+        .article-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+        .article-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        .article-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Multi<span>Tool</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html#tools" class="dropbtn">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="Resizer/index.html">Image Resizer</a>
+                        <a href="Converter/index.html">File Converter</a>
+                    </div>
+                </li>
+                <li><a href="guides.html">Guides</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="guides-container fade-in">
+            <div class="guides-header">
+                <h1>The MultiTool Learning Hub</h1>
+                <p>Master image optimization, file formats, and web performance with our expert guides.</p>
+            </div>
+
+            <!-- The Grid of Articles -->
+            <div class="articles-grid">
+                
+                <!-- Article 1 -->
+                <div class="article-card">
+                    <h2>How to Compress Images for the Web</h2>
+                    <p>Learn how to reduce file sizes without sacrificing quality. Discover the best compression techniques to speed up your website.</p>
+                    <a href="articles/how-to-compress-images-for-web.html" class="read-more">Read Guide →</a>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="article-card">
+                    <h2>Best Image Dimensions for Social Media</h2>
+                    <p>Discover the exact image sizes for Instagram, X, Facebook, and LinkedIn to ensure your posts always look perfectly sharp.</p>
+                    <a href="articles/best-image-dimensions-social-media.html" class="read-more">Read Guide →</a>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="article-card">
+                    <h2>JPEG vs PNG vs WebP</h2>
+                    <p>Compare the internet's most popular image formats. Find out which one is best for your website, SEO, and visual quality.</p>
+                    <a href="articles/understanding-file-formats.html" class="read-more">Read Guide →</a>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="article-card">
+                    <h2>Why Client-Side Processing Matters</h2>
+                    <p>Discover why processing images directly in your browser is faster, safer, and protects your personal privacy.</p>
+                    <a href="articles/secure-file-conversion.html" class="read-more">Read Guide →</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Trust Footer -->
+    <footer class="trust-footer" style="text-align: center; padding: 3rem 5% 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color); background-color: var(--card-bg);">
+        <div class="footer-links" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+            <a href="privacy-policy.html" style="color: var(--text-color); text-decoration: none;">Privacy Policy</a>
+            <a href="terms-of-service.html" style="color: var(--text-color); text-decoration: none;">Terms of Service</a>
+            <a href="contact.html" style="color: var(--text-color); text-decoration: none;">Contact Us</a>
+        </div>
+        <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2026 MultiTool. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
