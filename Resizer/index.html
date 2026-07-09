@@ -1,1 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Advanced SEO Meta Tags -->
+    <title>Free Online Image Resizer & Compressor | MultiTool</title>
+    <meta name="description" content="Use MultiTool's free online image resizer to compress, crop, and change photo ratios instantly securely in your browser.">
+    <meta name="keywords" content="image resizer, photo compressor, picture resizer, change image dimensions, crop image online">
+    <meta name="author" content="MultiTool">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="MultiTool - Fast & Free Online Image Resizer">
+    <meta property="og:description" content="Resize and compress your images securely in your browser. No sign-ups required.">
+    <meta property="og:type" content="website">
 
+    <!-- WebApplication JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MultiTool Image Resizer",
+      "url": "https://multitool.com/resizer",
+      "description": "A free, client-side browser tool to resize, crop, and compress images without uploading files to a server.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!-- FAQ JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this tool completely free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! MultiTool is completely free. There are no hidden fees, watermarks, or daily usage limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you store my images on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Everything runs purely on the frontend using your browser's processing power. Your files never leave your device, ensuring maximum privacy."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Inline styles for Articles Hub and Trust Footer[cite: 1] -->
+    <style>
+        /* Hub Navigation / Article Cards[cite: 1] */
+        .articles-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .articles-section h2 {
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background-color: var(--surface-color); /* adapted to local variables */
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main); /* adapted to local variables */
+            border: 1px solid var(--border); /* adapted to local variables */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary); /* adapted to local variables */
+        }
+
+        .article-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .article-card p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .read-more {
+            color: var(--primary); /* adapted to local variables */
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        .view-all-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        /* Trust Footer styling[cite: 1] */
+        .trust-footer {
+            text-align: center;
+            padding: 3rem 5% 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border); /* adapted to local variables */
+            background-color: var(--surface-color); /* adapted to local variables */
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-main); /* adapted to local variables */
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary); /* adapted to local variables */
+        }
+
+        .footer-copy {
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🛠️ MultiTool</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="#tool">Resizer</a></li>
+                <li><a href="#articles">Guides</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEO INTRODUCTION SECTION -->
+        <section id="intro" class="content-section text-center" style="margin-top: 3rem; margin-bottom: 1rem;">
+            <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 1rem;">MultiTool Image Resizer</h1>
+            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+                Welcome to the MultiTool Image Resizer. Whether you are preparing photos for social media or optimizing web graphics to improve page load times, our tool offers a seamless experience. Built to be lightweight and fast, it processes everything directly within your browser. This means you get professional-grade resizing and compression without the need to create an account or pay for premium subscriptions.
+            </p>
+        </section>
+
+        <!-- MAIN TOOL SECTION -->
+        <section id="tool" class="hero" style="margin-top: 2rem;">
+            <h2>Optimize Your Images Instantly</h2>
+            
+            <!-- Expanded Instructions -->
+            <div class="instructions" style="text-align: left; max-width: 700px; margin: 1.5rem auto; background: var(--surface-color); padding: 1.5rem 2rem; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+                <h3 style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--primary);">How to use this tool:</h3>
+                <ol style="padding-left: 1.5rem; line-height: 1.6; color: var(--text-main);">
+                    <li style="margin-bottom: 0.5rem;"><strong>Upload:</strong> Click "Choose an Image" or drag and drop your file into the upload box below.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Scale:</strong> Use the <em>Scale Percentage</em> slider for quick resizing, or enter exact pixel dimensions in the <em>Width</em> and <em>Height</em> boxes.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Lock Ratio:</strong> Keep the <em>Lock Aspect Ratio</em> checkbox ticked to prevent your image from looking stretched or distorted when manually changing dimensions.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Format & Quality:</strong> Choose your output format (JPEG is best for photos, PNG preserves transparent backgrounds). If using JPEG or WebP, adjust the <em>Compression Quality</em> slider to reduce file size further.</li>
+                    <li><strong>Process & Download:</strong> Click "Process Image" to generate your preview, compare the new file size with the original, and download your optimized image!</li>
+                </ol>
+            </div>
+            
+            <div class="upload-container" id="upload-container">
+                <input type="file" id="image-upload" accept="image/png, image/jpeg, image/webp" hidden>
+                <label for="image-upload" class="upload-btn">Choose an Image</label>
+                <p class="drag-text">or drag and drop here</p>
+            </div>
+
+            <!-- Editor Section (Hidden initially) -->
+            <div class="editor-container hidden" id="editor-container">
+                <div class="preview-area">
+                    <img id="image-preview" src="" alt="Live preview of your optimized image">
+                </div>
+                
+                <div class="controls-area">
+                    <h3>Resize Settings</h3>
+                    
+                    <div class="control-group">
+                        <label>Scale Percentage: <span id="percent-val">100%</span></label>
+                        <input type="range" id="scale-percent" min="1" max="100" value="100" aria-label="Scale percentage slider">
+                    </div>
+
+                    <div class="dimension-controls">
+                        <div class="control-group">
+                            <label>Width (px)</label>
+                            <input type="number" id="img-width" aria-label="Image width in pixels">
+                        </div>
+                        <div class="control-group">
+                            <label>Height (px)</label>
+                            <input type="number" id="img-height" aria-label="Image height in pixels">
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group" style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+                        <input type="checkbox" id="lock-ratio" checked>
+                        <label for="lock-ratio">Lock Aspect Ratio</label>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Output Format</label>
+                        <select id="output-format" aria-label="Select output format">
+                            <option value="image/jpeg">JPEG (Best for compression)</option>
+                            <option value="image/png">PNG (Preserves transparency)</option>
+                            <option value="image/webp">WebP (Next-gen web format)</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group" id="quality-group">
+                        <label>Compression Quality: <span id="quality-val">80%</span></label>
+                        <input type="range" id="quality-slider" min="1" max="100" value="80" aria-label="Image compression quality slider">
+                    </div>
+
+                    <button id="apply-btn" class="primary-btn">Process Image</button>
+                </div>
+            </div>
+
+            <!-- Results Section (Hidden initially) -->
+            <div class="results-container hidden" id="results-container">
+                <h3>Clean Comparison Results</h3>
+                <div class="comparison-grid">
+                    <div class="stat-box original">
+                        <h4>Original</h4>
+                        <p id="orig-size">0 KB</p>
+                        <p id="orig-dim">0 x 0</p>
+                    </div>
+                    <div class="stat-box optimized">
+                        <h4>Optimized</h4>
+                        <p id="new-size">0 KB</p>
+                        <p id="new-dim">0 x 0</p>
+                        <p id="saved-badge" class="badge">Saved 0%</p>
+                    </div>
+                </div>
+                <a id="download-link" class="download-btn" download="multitool-optimized-image.jpg">Download Image</a>
+                <button id="reset-btn" class="secondary-btn">Process Another</button>
+            </div>
+        </section>
+
+        <!-- Educational Hub / Internal Spoke Links (NEW) -->
+        <section id="articles" class="articles-section fade-in">
+            <h2>Image Optimization Guides</h2>
+            <p class="section-subtitle">Learn how to make the most of your digital media with our expert tips and tutorials.[cite: 1]</p>
+            
+            <div class="card-grid">
+                <!-- Article Preview 1[cite: 1] -->
+                <a href="../articles/best-image-dimensions-social-media.html" class="article-card">
+                    <h3>Best Image Dimensions for Social Media</h3>
+                    <p>Get the exact pixel requirements and aspect ratios for Instagram, Facebook, X (Twitter), and LinkedIn to ensure your posts look perfect.</p>
+                    <span class="read-more">Read Guide →</span>
+                </a>
+                
+                <!-- Article Preview 2[cite: 1] -->
+                <a href="../articles/how-to-compress-images-for-web.html" class="article-card">
+                    <h3>How to Compress Images for the Web</h3>
+                    <p>Learn the best practices for reducing image file sizes to boost your website's loading speed without sacrificing visual quality.</p>
+                    <span class="read-more">Read Guide →</span>
+                </a>
+
+                <!-- Article Preview 3[cite: 1] -->
+                <a href="../articles/understanding-file-formats.html" class="article-card">
+                    <h3>JPEG vs PNG vs WebP</h3>
+                    <p>A comprehensive breakdown of modern image formats to help you choose the exact right file type for your specific needs.</p>
+                    <span class="read-more">Read Guide →</span>
+                </a>
+            </div>
+
+            <div class="view-all-container">
+                <a href="../guides.html" class="btn secondary-btn" style="padding: 0.75rem 2rem; border-radius: 0.5rem; text-decoration: none; border: 2px solid var(--border); color: var(--text-main);">View All Guides</a>
+            </div>
+        </section>
+
+        <!-- SEO CONTENT SECTIONS -->
+        <section id="about" class="content-section">
+            <h2>Why Use Our Optimization Tool?</h2>
+            <p>High-resolution images can drastically slow down your website or exceed email attachment limits. Our optimization tool solves this instantly by giving you precise control over your image dimensions and file sizes. Because the tool operates entirely via your browser's local HTML5 and JavaScript engines, it offers unparalleled privacy—your photos are never uploaded to a remote database.</p>
+            <p>We are continually updating our features to ensure you have the best, most secure utility for your digital workflow. Whether you are a web developer trying to hit perfect Core Web Vitals, or a casual user just trying to make a photo fit a profile picture requirement, MultiTool is here to help.</p>
+        </section>
+
+        <section id="faq" class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3>Is this tool completely free?</h3>
+                <p>Yes! MultiTool is completely free. There are no hidden fees, watermarks, or daily usage limits.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Do you store my images on your servers?</h3>
+                <p>No. Everything runs purely on the frontend using your browser's processing power. Your files never leave your device, ensuring maximum privacy.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is aspect ratio?</h3>
+                <p>Aspect ratio is the proportional relationship between an image's width and height. Keeping the "Lock Aspect Ratio" box checked ensures your image doesn't look stretched or squished when you resize it.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Why did my file size increase?</h3>
+                <p>If you convert a highly compressed JPEG into a PNG, the file size may increase because PNG is a lossless format. Stick to JPEG or WebP for the smallest file sizes.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Trust Footer (NEW)[cite: 1] -->
+    <footer class="trust-footer">
+        <div class="footer-links">
+            <a href="../privacy-policy.html">Privacy Policy</a>
+            <a href="../terms-of-service.html">Terms of Service</a>
+            <a href="../contact.html">Contact Us</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 MultiTool. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
