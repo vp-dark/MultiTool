@@ -5,92 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Core SEO Meta Tags -->
-    <title>RealMultiTool | Free Online Image Resizer & File Converter</title>
-    <meta name="description" content="Access free, fast, and secure online tools including an Image Resizer and File Converter. No backend, no server uploads—everything is processed safely in your browser.">
-    <meta name="keywords" content="image resizer, file converter, free online tools, browser utilities, privacy focused tools, offline web tools, format converter">
-    <meta name="author" content="VP"> <!-- Updated Author Name -->
+    <title>All Guides & Articles | RealMultiTool</title>
+    <meta name="description" content="Read our latest guides, tips, and tutorials on file management and optimization to get the most out of your digital workflow.">
+    <meta name="keywords" content="image compression, file formats, social media dimensions, client-side processing, web tutorials">
+    <meta name="author" content="VP">
     <meta name="robots" content="index, follow">
     
-    <!-- Updated Canonical URL -->
-    <link rel="canonical" href="https://realmultitool.com/">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://realmultitool.com/guides.html">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="RealMultiTool | Free Online Utilities">
-    <meta property="og:description" content="Fast, secure, and privacy-friendly web tools. Process files locally in your browser.">
+    <meta property="og:title" content="All Guides & Articles | RealMultiTool">
+    <meta property="og:description" content="Read our latest guides, tips, and tutorials on file management and optimization.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://realmultitool.com/"> <!-- Updated OG URL -->
+    <meta property="og:url" content="https://realmultitool.com/guides.html">
     
-    <!-- Google AdSense Placeholder - Paste your verification script below this line once approved -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
-    <!-- JSON-LD Schema Markup for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "RealMultiTool",
-      "url": "https://realmultitool.com/",
-      "description": "Free online utilities processed locally in your browser."
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Are these tools free to use?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! All tools on this website are 100% free with no hidden charges, watermarks, or premium subscriptions."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you store my files on your servers?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Everything runs purely on the frontend using your browser's processing power. Your files never leave your device, ensuring maximum privacy and zero risk of data leaks."
-          }
-        }
-      ]
-    }
-    </script>
-
     <link rel="stylesheet" href="style.css">
     
-    <!-- Inline styles for new About, Articles Hub, and Trust Footer -->
+    <!-- Inline styles specifically for the Articles Hub and Trust Footer -->
     <style>
-        .about-section, .articles-section {
+        .articles-section {
             padding: 4rem 5%;
             max-width: 1000px;
-            margin: 0 auto;
+            margin: 4rem auto 0; /* Margin added to clear a fixed header if applicable */
         }
         
-        .about-section {
-            max-width: 800px;
-            text-align: center;
-        }
-        
-        .about-section h2, .articles-section h2 {
+        .articles-section h1 {
             margin-bottom: 1.5rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
             text-align: center;
-        }
-        
-        .about-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.9;
+            color: var(--primary-color);
         }
 
-        /* Hub Navigation / Article Cards */
         .section-subtitle {
             text-align: center;
             margin-bottom: 3rem;
             opacity: 0.8;
             font-size: 1.1rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .article-card {
@@ -129,11 +86,6 @@
             font-weight: 600;
             font-size: 0.9rem;
             margin-top: auto;
-        }
-
-        .view-all-container {
-            text-align: center;
-            margin-top: 3rem;
         }
 
         /* Trust Footer styling */
@@ -188,18 +140,18 @@
             <a href="index.html" class="logo">RealMulti<span>Tool</span></a>
             
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <!-- Dropdown Menu -->
+                <!-- Anchor links updated to route back to index.html -->
+                <li><a href="index.html#home">Home</a></li>
                 <li class="dropdown">
-                    <a href="#tools" class="dropbtn">Tools ▾</a>
+                    <a href="index.html#tools" class="dropbtn">Tools ▾</a>
                     <div class="dropdown-content">
                         <a href="Resizer/index.html">Image Resizer</a>
                         <a href="Converter/index.html">File Converter</a>
                     </div>
                 </li>
-                <li><a href="#articles">Guides</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
             </ul>
 
             <button id="theme-toggle" aria-label="Toggle Dark Mode">
@@ -208,115 +160,40 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <main>
-        <section id="home" class="hero fade-in">
-            <h1>Everything you need, in one place.</h1>
-            <p>Fast, secure, and privacy-friendly. All tools run entirely in your browser.</p>
-            <div class="hero-buttons">
-                <a href="Resizer/index.html" class="btn primary-btn">Resize an Image</a>
-                <a href="Converter/index.html" class="btn secondary-btn">Convert a File</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section fade-in">
-            <h2>About RealMultiTool</h2>
-            <p>
-                RealMultiTool is designed to be your go-to hub for everyday digital tasks. We believe in speed, simplicity, and total privacy. That is why our tools—from the precision <strong>Image Resizer</strong> to the versatile <strong>File Converter</strong>—operate entirely within your web browser using modern web technologies. This means your sensitive files are <strong>never uploaded to any remote server</strong>, ensuring zero wait times for uploads and absolute data security. Whether you are a developer optimizing assets or a student changing document formats, RealMultiTool delivers a seamless, lightning-fast experience right on the web.
-            </p>
-        </section>
-
-        <!-- Tools Showcase Section -->
-        <section id="tools" class="tools-section fade-in">
-            <h2>Our Tools</h2>
-            <div class="card-grid">
-                <a href="Resizer/index.html" class="tool-card">
-                    <div class="card-icon">🖼️</div>
-                    <h3>Image Resizer</h3>
-                    <p>Quickly scale, crop, and compress your images without losing quality. Perfect for social media and web optimization.</p>
-                </a>
-                <a href="Converter/index.html" class="tool-card">
-                    <div class="card-icon">🔄</div>
-                    <h3>File Converter</h3>
-                    <p>Convert your documents and media to different formats instantly. Support for PNG, JPEG, WEBP, and more.</p>
-                </a>
-            </div>
-        </section>
-
         <!-- Educational Hub / Articles Section -->
         <section id="articles" class="articles-section fade-in">
-            <h2>Learning Hub & Resources</h2>
+            <h1>All Guides & Resources</h1>
             <p class="section-subtitle">Read our latest guides, tips, and tutorials on file management and optimization to get the most out of your digital workflow.</p>
             
             <div class="card-grid">
                 <!-- Article Preview 1 -->
                 <a href="articles/how-to-compress-images-for-web.html" class="article-card">
                     <h3>How to Compress Images for the Web</h3>
-                    <p>Learn the best practices for reducing image file sizes to boost your website's loading speed without sacrificing visual quality.</p>
+                    <p>Learn how to compress images for the web without sacrificing quality. Discover the best image formats, compression techniques, and tools to improve website speed.</p>
                     <span class="read-more">Read Guide →</span>
                 </a>
                 
                 <!-- Article Preview 2 -->
                 <a href="articles/understanding-file-formats.html" class="article-card">
                     <h3>JPEG vs PNG vs WebP</h3>
-                    <p>A comprehensive breakdown of modern image formats to help you choose the exact right file type for your specific needs.</p>
+                    <p>Compare JPEG, PNG, and WebP image formats to discover which is best for websites, social media, blogging, and SEO.</p>
                     <span class="read-more">Read Guide →</span>
                 </a>
 
                 <!-- Article Preview 3 -->
                 <a href="articles/secure-file-conversion.html" class="article-card">
-                    <h3>Why Client-Side Processing Matters</h3>
-                    <p>Discover how browser-based tools protect your privacy and keep your sensitive data safe from remote server leaks.</p>
+                    <h3>Why Client-Side Image Processing Matters</h3>
+                    <p>Discover why client-side image processing is becoming the preferred choice for modern websites to improve privacy, speed, and security.</p>
                     <span class="read-more">Read Guide →</span>
                 </a>
-            </div>
 
-            <div class="view-all-container">
-                <a href="guides.html" class="btn secondary-btn">View All Guides</a>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="faq-section fade-in">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">Are these tools really free to use?</button>
-                    <div class="faq-answer">
-                        <p>Yes! All tools on this website are 100% free with no hidden charges, no watermarks, and no premium subscriptions required.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do you store my files or data?</button>
-                    <div class="faq-answer">
-                        <p>Absolutely not. RealMultiTool processes everything on the "client-side" (directly inside your browser). Your files never leave your computer, ensuring maximum privacy and security.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do I need to create an account?</button>
-                    <div class="faq-answer">
-                        <p>No account or registration is required. Simply open the tool you need, upload your file, and get your result instantly.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Will the Image Resizer reduce my image quality?</button>
-                    <div class="faq-answer">
-                        <p>Our resizer gives you complete control. If you choose to compress the image, there may be slight quality reduction depending on your settings, but standard resizing maintains high visual fidelity.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Can I use this website on my mobile phone?</button>
-                    <div class="faq-answer">
-                        <p>Yes, RealMultiTool is fully responsive. It works flawlessly on smartphones, tablets, and desktop computers as long as you have a modern web browser.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Is there a limit to how many files I can process?</button>
-                    <div class="faq-answer">
-                        <p>Since the processing happens on your own device, there are no strict usage limits enforced by us. You can process as many files as your device's memory can handle.</p>
-                    </div>
-                </div>
+                <!-- Article Preview 4 -->
+                <a href="articles/best-image-dimensions-social-media.html" class="article-card">
+                    <h3>Best Image Dimensions for Social Media</h3>
+                    <p>Discover the best image dimensions for Instagram, Facebook, X (Twitter), LinkedIn, Pinterest, YouTube, and more.</p>
+                    <span class="read-more">Read Guide →</span>
+                </a>
             </div>
         </section>
     </main>
