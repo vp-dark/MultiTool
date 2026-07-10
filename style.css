@@ -58,6 +58,7 @@ header {
     padding: 1rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -76,6 +77,8 @@ header {
     display: flex;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links a {
@@ -315,4 +318,27 @@ footer {
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
+}
+
+/* --- Responsive & Mobile Layout Fixes --- */
+@media (max-width: 768px) {
+    .editor-container { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .comparison-grid { 
+        flex-direction: column; 
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        display: flex; /* This ensures the links are actually visible! */
+        flex-direction: column; /* Stacks the links vertically */
+        gap: 1rem;
+        text-align: center;
+    }
 }
