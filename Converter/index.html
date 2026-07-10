@@ -245,6 +245,43 @@
             opacity: 0.6;
             font-size: 0.9rem;
         }
+
+        /* Responsive Optimization Overrides */
+        @media (max-width: 768px) {
+            .articles-section {
+                padding: 2.5rem 20px;
+            }
+            .articles-section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            .section-subtitle {
+                margin-bottom: 2rem;
+                font-size: 1rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .article-card {
+                padding: 1.25rem;
+            }
+            .trust-footer {
+                padding: 2rem 15px 1.5rem;
+                margin-top: 2.5rem;
+            }
+            .footer-links {
+                gap: 1.25rem;
+                margin-bottom: 1.25rem;
+            }
+            .view-all-container a {
+                padding: 0.75rem 1.5rem !important;
+                font-size: 1rem !important;
+                display: block !important;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKEJXKSF2Y"></script>

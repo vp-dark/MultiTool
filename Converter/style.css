@@ -220,8 +220,78 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
-/* Responsive */
+/* Fully Optimized Mobile Responsive Layout Breakpoints */
 @media (max-width: 768px) {
-    .nav-links { display: none; } /* Simple collapse for mobile */
-    .controls { flex-direction: column; }
+    /* Responsive Grid Structure for Header Element Layout alignment */
+    .nav-container {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 12px;
+        padding: 12px 15px;
+    }
+    .logo {
+        grid-column: 1;
+        font-size: 1.3rem;
+    }
+    .theme-btn {
+        grid-column: 2;
+        font-size: 1.3rem;
+    }
+    .nav-links {
+        grid-column: 1 / span 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+        padding-top: 10px;
+        border-top: 1px solid var(--border-color);
+        width: 100%;
+    }
+    
+    /* Typography Scaling Updates */
+    .section {
+        padding: 40px 0;
+    }
+    h1 {
+        font-size: 1.85rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.15rem;
+    }
+    
+    /* Box Component Cushion & Insets Optimization */
+    .hover-anim {
+        padding: 20px 15px;
+    }
+    .upload-area {
+        margin: 20px 0;
+        padding: 25px 15px;
+    }
+    
+    /* Controls Vertical Form Stack Optimization */
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 20px auto;
+        gap: 12px;
+    }
+    .controls select,
+    .controls .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* File Select Asset Safety Wrappers */
+    input[type="file"] {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+    #previewImg {
+        max-height: 220px;
+    }
 }
