@@ -56,9 +56,8 @@ body {
 header {
     background-color: var(--nav-bg);
     box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
+    z-index: 100;
     transition: var(--transition);
 }
 
