@@ -1,5 +1,8 @@
-/* --- Base Variables & Theming --- */
+/* ==========================================================================
+   Base Variables & Theming
+   ========================================================================== */
 :root {
+    /* Light Mode */
     --bg-color: #f8f9fa;
     --text-color: #212529;
     --nav-bg: #ffffff;
@@ -12,6 +15,7 @@
 }
 
 [data-theme="dark"] {
+    /* Dark Mode */
     --bg-color: #121212;
     --text-color: #f8f9fa;
     --nav-bg: #1e1e1e;
@@ -22,7 +26,9 @@
     --shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
-/* --- Reset & Global --- */
+/* ==========================================================================
+   Reset & Global
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -32,6 +38,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Prevents horizontal scrolling on mobile */
+    overflow-x: hidden; 
 }
 
 body {
@@ -39,9 +47,12 @@ body {
     color: var(--text-color);
     transition: var(--transition);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* --- Navigation --- */
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
 header {
     background-color: var(--nav-bg);
     box-shadow: var(--shadow);
@@ -58,14 +69,15 @@ header {
     padding: 1rem 5%;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allows wrapping on mobile */
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: bold;
     text-decoration: none;
     color: var(--text-color);
+    white-space: nowrap;
 }
 
 .logo span {
@@ -76,15 +88,14 @@ header {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
+    font-size: 1rem;
     transition: var(--transition);
 }
 
@@ -92,7 +103,7 @@ header {
     color: var(--primary-color);
 }
 
-/* Dropdown styling */
+/* Dropdown */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -102,19 +113,22 @@ header {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers dropdown under parent */
     background-color: var(--card-bg);
-    min-width: 160px;
+    min-width: 180px;
     box-shadow: var(--shadow);
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
+    z-index: 10;
 }
 
 .dropdown-content a {
     display: block;
     padding: 12px 16px;
     border-bottom: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .dropdown-content a:last-child {
@@ -125,12 +139,14 @@ header {
     background-color: var(--bg-color);
 }
 
-.dropdown:hover .dropdown-content {
+/* Works on hover for desktop, tap for mobile */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
     display: block;
     animation: fadeIn 0.2s ease;
 }
 
-/* Theme Toggle Button */
+/* Theme Toggle */
 #theme-toggle {
     background: none;
     border: none;
@@ -139,44 +155,59 @@ header {
     padding: 8px;
     border-radius: 50%;
     transition: var(--transition);
+    color: var(--text-color);
 }
 
 #theme-toggle:hover {
     background-color: var(--border-color);
 }
 
-/* --- Hero Section --- */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
 .hero {
     text-align: center;
-    padding: 6rem 5% 4rem;
+    padding: clamp(3rem, 10vw, 6rem) 5% clamp(2rem, 8vw, 4rem);
     max-width: 800px;
     margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    /* Fluid typography: min 2rem, scales with view width, max 3.5rem */
+    font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     opacity: 0.8;
     margin-bottom: 2rem;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; /* Stacks buttons on tiny screens */
+}
+
+/* Buttons */
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: var(--transition);
+    width: auto;
 }
 
 .primary-btn {
     background-color: var(--primary-color);
     color: #fff;
-    margin-right: 1rem;
 }
 
 .primary-btn:hover {
@@ -196,41 +227,70 @@ header {
     transform: translateY(-2px);
 }
 
-/* --- Tools Section --- */
-.tools-section, .faq-section {
-    padding: 4rem 5%;
+/* ==========================================================================
+   Sections Layout (About, Tools, Articles, FAQ)
+   ========================================================================== */
+.about-section, 
+.tools-section, 
+.articles-section, 
+.faq-section {
+    padding: clamp(2rem, 5vw, 4rem) 5%;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.tools-section h2, .faq-section h2 {
+.about-section {
+    max-width: 800px;
     text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2rem;
 }
 
+h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Card Grids (Tools & Articles)
+   ========================================================================== */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Auto-fits columns down to a minimum width of 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-.tool-card {
+/* Shared Card Styles */
+.tool-card, 
+.article-card {
     background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 12px;
-    text-align: center;
     text-decoration: none;
     color: var(--text-color);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.tool-card:hover {
+.tool-card:hover, 
+.article-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     border-color: var(--primary-color);
+}
+
+.tool-card {
+    text-align: center;
 }
 
 .card-icon {
@@ -238,16 +298,34 @@ header {
     margin-bottom: 1rem;
 }
 
-.tool-card h3 {
+/* Article Specific */
+.article-card h3 {
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
-.tool-card p {
+.article-card p {
     opacity: 0.8;
     font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes the 'read more' link to the bottom evenly */
 }
 
-/* --- FAQ Section --- */
+.read-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.view-all-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* ==========================================================================
+   FAQ Accordion
+   ========================================================================== */
 .faq-container {
     display: flex;
     flex-direction: column;
@@ -268,7 +346,7 @@ header {
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -280,6 +358,8 @@ header {
     content: '+';
     font-size: 1.5rem;
     transition: transform 0.3s ease;
+    flex-shrink: 0; /* Prevents plus sign from squishing on tiny phones */
+    margin-left: 1rem;
 }
 
 .faq-item.active .faq-question::after {
@@ -295,22 +375,100 @@ header {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px;
+    max-height: 500px; /* Increased for mobile screens where text wraps more */
     padding-bottom: 1.5rem;
     opacity: 1;
-    transition: max-height 0.3s ease-in, opacity 0.4s ease-in;
+    transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
 }
 
-/* --- Footer --- */
-footer {
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.trust-footer {
     text-align: center;
-    padding: 2rem;
-    margin-top: 2rem;
+    padding: 3rem 5% 2rem;
+    margin-top: 4rem;
     border-top: 1px solid var(--border-color);
-    opacity: 0.8;
+    background-color: var(--card-bg);
 }
 
-/* --- Animations --- */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap; /* Allows links to stack cleanly on small phones */
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.footer-copy {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Mobile-Specific Overrides (Media Queries)
+   ========================================================================== */
+
+/* Tablet & Mobile Nav Reshuffling */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .nav-links {
+        order: 3; /* Pushes the menu below the logo and toggle */
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #theme-toggle {
+        margin-left: auto; /* Pushes toggle to the right */
+    }
+
+    .dropdown-content {
+        left: 0;
+        transform: none;
+    }
+}
+
+/* Small Phones (< 480px) */
+@media (max-width: 480px) {
+    .btn {
+        width: 100%; /* Makes buttons full width on tiny screens */
+        text-align: center;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Forces exactly 1 column */
+    }
+    
+    .faq-question {
+        padding: 1.25rem 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1rem;
+    }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -318,27 +476,4 @@ footer {
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
-}
-
-/* --- Responsive & Mobile Layout Fixes --- */
-@media (max-width: 768px) {
-    .editor-container { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .comparison-grid { 
-        flex-direction: column; 
-    }
-
-    .navbar {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .nav-links {
-        display: flex; /* This ensures the links are actually visible! */
-        flex-direction: column; /* Stacks the links vertically */
-        gap: 1rem;
-        text-align: center;
-    }
 }
