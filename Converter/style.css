@@ -56,8 +56,7 @@ body {
 nav {
     background-color: var(--nav-bg);
     box-shadow: var(--shadow-soft);
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 100;
 }
 
