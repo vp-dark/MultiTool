@@ -85,17 +85,18 @@
 
         .card-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Adjusted minmax to 280px to prevent overflow on very small devices */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
 
         .article-card {
-            background-color: var(--surface-color); /* adapted to local variables */
+            background-color: var(--surface-color);
             padding: 1.5rem;
             border-radius: 12px;
             text-decoration: none;
-            color: var(--text-main); /* adapted to local variables */
-            border: 1px solid var(--border); /* adapted to local variables */
+            color: var(--text-main);
+            border: 1px solid var(--border);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -105,7 +106,7 @@
         .article-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--primary); /* adapted to local variables */
+            border-color: var(--primary);
         }
 
         .article-card h3 {
@@ -121,7 +122,7 @@
         }
 
         .read-more {
-            color: var(--primary); /* adapted to local variables */
+            color: var(--primary);
             font-weight: 600;
             font-size: 0.9rem;
             margin-top: auto;
@@ -137,8 +138,8 @@
             text-align: center;
             padding: 3rem 5% 2rem;
             margin-top: 4rem;
-            border-top: 1px solid var(--border); /* adapted to local variables */
-            background-color: var(--surface-color); /* adapted to local variables */
+            border-top: 1px solid var(--border);
+            background-color: var(--surface-color);
         }
 
         .footer-links {
@@ -150,7 +151,7 @@
         }
 
         .footer-links a {
-            color: var(--text-main); /* adapted to local variables */
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 500;
             opacity: 0.8;
@@ -159,12 +160,53 @@
 
         .footer-links a:hover {
             opacity: 1;
-            color: var(--primary); /* adapted to local variables */
+            color: var(--primary);
         }
 
         .footer-copy {
             opacity: 0.6;
             font-size: 0.9rem;
+        }
+        
+        /* Extracted Inline Styles for better mobile overrides */
+        .intro-title {
+            font-size: 2.8rem; 
+            color: var(--primary); 
+            margin-bottom: 1rem;
+        }
+        
+        .intro-desc {
+            font-size: 1.1rem; 
+            color: var(--text-muted); 
+            max-width: 800px; 
+            margin: 0 auto;
+        }
+        
+        .instructions-box {
+            text-align: left; 
+            max-width: 700px; 
+            margin: 1.5rem auto; 
+            background: var(--surface-color); 
+            padding: 1.5rem 2rem; 
+            border-radius: 8px; 
+            border: 1px solid var(--border); 
+            box-shadow: var(--shadow);
+        }
+        
+        .instructions-box h3 {
+            margin-bottom: 1rem; 
+            font-size: 1.2rem; 
+            color: var(--primary);
+        }
+        
+        .instructions-box ol {
+            padding-left: 1.5rem; 
+            line-height: 1.6; 
+            color: var(--text-main);
+        }
+        
+        .instructions-box li {
+            margin-bottom: 0.5rem;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -195,8 +237,8 @@
     <main>
         <!-- SEO INTRODUCTION SECTION -->
         <section id="intro" class="content-section text-center" style="margin-top: 3rem; margin-bottom: 1rem;">
-            <h1 style="font-size: 2.8rem; color: var(--primary); margin-bottom: 1rem;">RealMultiTool Image Resizer</h1>
-            <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+            <h1 class="intro-title">RealMultiTool Image Resizer</h1>
+            <p class="intro-desc">
                 Welcome to the RealMultiTool Image Resizer. Whether you are preparing photos for social media or optimizing web graphics to improve page load times, our tool offers a seamless experience. Built to be lightweight and fast, it processes everything directly within your browser. This means you get professional-grade resizing and compression without the need to create an account or pay for premium subscriptions.
             </p>
         </section>
@@ -206,14 +248,14 @@
             <h2>Optimize Your Images Instantly</h2>
             
             <!-- Expanded Instructions -->
-            <div class="instructions" style="text-align: left; max-width: 700px; margin: 1.5rem auto; background: var(--surface-color); padding: 1.5rem 2rem; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
-                <h3 style="margin-bottom: 1rem; font-size: 1.2rem; color: var(--primary);">How to use this tool:</h3>
-                <ol style="padding-left: 1.5rem; line-height: 1.6; color: var(--text-main);">
-                    <li style="margin-bottom: 0.5rem;"><strong>Upload:</strong> Click "Choose an Image" or drag and drop your file into the upload box below.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Scale:</strong> Use the <em>Scale Percentage</em> slider for quick resizing, or enter exact pixel dimensions in the <em>Width</em> and <em>Height</em> boxes.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Lock Ratio:</strong> Keep the <em>Lock Aspect Ratio</em> checkbox ticked to prevent your image from looking stretched or distorted when manually changing dimensions.</li>
-                    <li style="margin-bottom: 0.5rem;"><strong>Format & Quality:</strong> Choose your output format (JPEG is best for photos, PNG preserves transparent backgrounds). If using JPEG or WebP, adjust the <em>Compression Quality</em> slider to reduce file size further.</li>
-                    <li><strong>Process & Download:</strong> Click "Process Image" to generate your preview, compare the new file size with the original, and download your optimized image!</li>
+            <div class="instructions instructions-box">
+                <h3>How to use this tool:</h3>
+                <ol>
+                    <li><strong>Upload:</strong> Click "Choose an Image" or drag and drop your file into the upload box below.</li>
+                    <li><strong>Scale:</strong> Use the <em>Scale Percentage</em> slider for quick resizing, or enter exact pixel dimensions in the <em>Width</em> and <em>Height</em> boxes.</li>
+                    <li><strong>Lock Ratio:</strong> Keep the <em>Lock Aspect Ratio</em> checkbox ticked to prevent your image from looking stretched or distorted when manually changing dimensions.</li>
+                    <li><strong>Format & Quality:</strong> Choose your output format (JPEG is best for photos, PNG preserves transparent backgrounds). If using JPEG or WebP, adjust the <em>Compression Quality</em> slider to reduce file size further.</li>
+                    <li style="margin-bottom: 0;"><strong>Process & Download:</strong> Click "Process Image" to generate your preview, compare the new file size with the original, and download your optimized image!</li>
                 </ol>
             </div>
             
@@ -287,8 +329,10 @@
                         <p id="saved-badge" class="badge">Saved 0%</p>
                     </div>
                 </div>
-                <a id="download-link" class="download-btn" download="realmultitool-optimized-image.jpg">Download Image</a>
-                <button id="reset-btn" class="secondary-btn">Process Another</button>
+                <div class="action-buttons">
+                    <a id="download-link" class="download-btn" download="realmultitool-optimized-image.jpg">Download Image</a>
+                    <button id="reset-btn" class="secondary-btn">Process Another</button>
+                </div>
             </div>
         </section>
 
