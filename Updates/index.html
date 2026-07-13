@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- UPDATE THESE FOR EACH ARTICLE -->
+    <title>UPDATES | RealMultiTool</title>
+    <meta name="description" content="updates">
+    
+    <!-- Link back to your main CSS file -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Special styling just for reading articles -->
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 0 5%;
+        }
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .article-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .article-meta {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        .article-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .article-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+        .article-content strong {
+            color: var(--text-color);
+        }
+        /* Call to action box linking back to your tool */
+        .tool-promo {
+            background-color: var(--card-bg);
+            border: 2px dashed var(--primary-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            margin: 3rem 0;
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKEJXKSF2Y"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-JKEJXKSF2Y');
+    </script>
+</head>
+<body>
+    <!-- YOUR STANDARD NAVIGATION BAR -->
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">RealMulti<span>Tool</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="../index.html#tools" class="dropbtn">Tools ▾</a>
+                    <div class="dropdown-content">
+                        <a href="../Resizer/index.html">Image Resizer</a>
+                        <a href="../Converter/index.html">File Converter</a>
+                        <a href="../Cropper/index.html">Image Cropper</a>
+                    </div>
+                </li>
+            </ul>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <span id="theme-icon">🌙</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- THE ARTICLE -->
+    <main>
+        <article class="article-container fade-in">
+            
+            <header class="article-header">
+                <h1>Updates by the dev</h1>
+                <p class="article-meta">Last updated on July 9, 2026</p>
+            </header>
+
+            <div class="article-content">
+              <p>I have added a new image cropper in the website.</p>
+              <p>I also have made some changes for easier navigation in the complete website.</p>
+              <p>Dear Users, I hope this website helps you.</p>
+
+                <h2>Frequently Asked Questions (FAQs)</h2>
+                
+                <h3>What is the best image size for Instagram posts?</h3>
+                <p>The recommended size for a standard square Instagram post is <strong>1080 × 1080 pixels</strong>, while portrait posts perform well at <strong>1080 × 1350 pixels</strong>.</p>
+
+                <h3>Why do my social media images appear blurry?</h3>
+                <p>Blurry images are often caused by uploading low-resolution files or using incorrect dimensions. Starting with high-quality images and exporting them at the recommended sizes helps maintain clarity.</p>
+
+                <h3>Should I use the same image dimensions for every platform?</h3>
+                <p>No. Each platform has different display requirements. Resizing images for each platform ensures the best appearance and avoids unwanted cropping.</p>
+
+                <h3>Does image size affect social media engagement?</h3>
+                <p>Yes. Well-sized, high-quality images look more professional, improve the user experience, and can lead to higher engagement.</p>
+
+                <h3>Should I compress images before uploading to social media?</h3>
+                <p>Yes. Compressing images reduces file size without noticeably affecting quality, making uploads faster and ensuring better performance across devices.</p>
+                
+            </div>
+        </article>
+    </main>
+
+    <!-- YOUR STANDARD FOOTER WITH TRUST LINKS -->
+    <footer class="trust-footer" style="text-align: center; padding: 3rem 5% 2rem; margin-top: 4rem; border-top: 1px solid var(--border-color); background-color: var(--card-bg);">
+        <div class="footer-links" style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem;">
+            <a href="../privacy-policy.html" style="color: var(--text-color); text-decoration: none;">Privacy Policy</a>
+            <a href="../terms-of-service.html" style="color: var(--text-color); text-decoration: none;">Terms of Service</a>
+            <a href="../contact.html" style="color: var(--text-color); text-decoration: none;">Contact Us</a>
+        </div>
+        <p style="opacity: 0.6; font-size: 0.9rem;">&copy; 2026 RealMultiTool. All rights reserved.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
