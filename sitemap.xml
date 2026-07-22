@@ -12,7 +12,7 @@
   </url>
 
   <!-- Tools -->
-    <url>
+  <url>
     <loc>https://realmultitool.com/Resizer/</loc>
     <priority>0.9</priority>
   </url>
@@ -20,11 +20,11 @@
     <loc>https://realmultitool.com/Converter/</loc>
     <priority>0.9</priority>
   </url>
-    <url>
+  <url>
     <loc>https://realmultitool.com/Cropper/</loc>
     <priority>0.9</priority>
   </url>
-  <url>
+
 
  <!-- Articles -->
   <url>
@@ -43,13 +43,12 @@
     <loc>https://realmultitool.com/articles/understanding-file-formats.html</loc>
     <priority>0.7</priority>
   </url>
-    <url>
+  <url>
     <loc>https://realmultitool.com/articles/rule-of-thirds-cropping.html</loc>
     <priority>0.7</priority>
   </url>
-    <url>
+  <url>
     <loc>https://realmultitool.com/articles/social-media-image-sizes.html</loc>
     <priority>0.7</priority>
   </url>
-
 </urlset>
