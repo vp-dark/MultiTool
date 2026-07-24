@@ -476,3 +476,53 @@ h2 {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
+.bg-shapes{
+  position:fixed;
+  inset:0;
+  z-index:-1;          /* sits behind everything */
+  overflow:hidden;
+  pointer-events:none;
+}
+.shape{
+  position:absolute;
+  border-radius:16px;   /* rounded square; set to 0 for sharp corners */
+  opacity:0.08;         /* keep it subtle */
+  background:linear-gradient(135deg, #6366f1, #8b5cf6);
+  animation:spin-float 30s linear infinite;
+}
+.shape-1{
+  width:280px; height:280px;
+  top:8%; left:6%;
+  animation-duration:38s;
+}
+.shape-2{
+  width:180px; height:180px;
+  top:60%; left:80%;
+  animation-duration:26s;
+  animation-direction:reverse;
+  background:linear-gradient(135deg, #06b6d4, #3b82f6);
+}
+.shape-3{
+  width:220px; height:220px;
+  top:75%; left:10%;
+  animation-duration:44s;
+  background:linear-gradient(135deg, #f472b6, #a855f7);
+}
+.shape-4{
+  width:140px; height:140px;
+  top:15%; left:85%;
+  animation-duration:22s;
+  animation-direction:reverse;
+  background:linear-gradient(135deg, #34d399, #06b6d4);
+}
+
+@keyframes spin-float{
+  0%   { transform: rotate(0deg) translateY(0px); }
+  50%  { transform: rotate(180deg) translateY(30px); }
+  100% { transform: rotate(360deg) translateY(0px); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .shape{ animation:none; }
+}
