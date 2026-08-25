@@ -138,6 +138,13 @@ h2 {
     color: #fff;
 }
 
+.hub-btn {
+    padding: 0.75rem 2.5rem; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    font-size: 1.1rem;
+}
+
 /* ==========================================================================
    Navigation Bar
    ========================================================================== */
@@ -168,7 +175,6 @@ nav {
     white-space: nowrap;
 }
 
-/* Adds the blue color specifically to the word "Tool" */
 .logo span {
     color: var(--primary-color); 
 }
@@ -204,6 +210,29 @@ nav {
 
 .theme-btn:hover {
     background-color: var(--border-color);
+}
+
+/* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; /* Changed from 1000px to standard banner width */
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
 }
 
 /* ==========================================================================
@@ -389,6 +418,11 @@ select:focus {
     margin-top: auto;
 }
 
+.view-all-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
 /* ==========================================================================
    Trust Footer
    ========================================================================== */
@@ -462,6 +496,12 @@ select:focus {
 
     .controls select, .controls .btn {
         width: 100%;
+    }
+
+    .view-all-container a {
+        display: block !important;
+        max-width: 280px;
+        margin: 0 auto;
     }
 }
 
