@@ -58,6 +58,12 @@ body {
     text-align: center;
 }
 
+/* Utility Spacing Classes (Replaces your inline styles) */
+.mt-2 { margin-top: 2rem !important; }
+.mt-3 { margin-top: 3rem !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 1rem !important; }
+
 /* ==========================================================================
    Typography & Shared Components
    ========================================================================== */
@@ -119,6 +125,12 @@ h2 {
     transform: translateY(-2px);
 }
 
+.hub-btn {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    width: auto;
+}
+
 /* ==========================================================================
    Header & Navigation
    ========================================================================== */
@@ -126,7 +138,6 @@ header {
     background-color: var(--surface-color);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     position: relative;
-    /* top: 0; */
     z-index: 100;
     transition: var(--transition);
 }
@@ -144,13 +155,11 @@ header {
 .logo {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     font-weight: bold;
-    /* Uses your theme variable so it stays visible in Dark Mode */
     color: var(--text-main); 
     text-decoration: none;
     white-space: nowrap;
 }
 
-/* Adds the blue color specifically to the word "Tool" */
 .logo span {
     color: var(--primary); 
 }
@@ -230,6 +239,31 @@ header {
 .instructions-box li {
     margin-bottom: 0.75rem;
 }
+
+/* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; /* Changed from 1000px to standard banner width */
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
+}
+
+
 
 /* ==========================================================================
    Image Resizer Tool Sections
@@ -333,6 +367,13 @@ header {
 
 .dimension-controls .control-group {
     flex: 1;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
 }
 
 /* Form Inputs */
