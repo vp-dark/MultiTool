@@ -12,6 +12,9 @@
     --border-color: #e9ecef;
     --shadow: 0 4px 6px rgba(0,0,0,0.05);
     --transition: all 0.3s ease;
+    
+    /* Blog specific text colors */
+    --text-muted: #6b7280;
 }
 
 [data-theme="dark"] {
@@ -27,7 +30,7 @@
 }
 
 /* ==========================================================================
-   Reset & Global
+   Reset & Global Utilities
    ========================================================================== */
 * {
     margin: 0;
@@ -38,7 +41,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* Prevents horizontal scrolling on mobile */
     overflow-x: hidden; 
 }
 
@@ -48,6 +50,10 @@ body {
     transition: var(--transition);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+.mb-2 {
+    margin-bottom: 2rem !important;
 }
 
 /* ==========================================================================
@@ -68,7 +74,7 @@ header {
     padding: 1rem 5%;
     max-width: 1200px;
     margin: 0 auto;
-    flex-wrap: wrap; /* Allows wrapping on mobile */
+    flex-wrap: wrap; 
 }
 
 .logo {
@@ -113,7 +119,7 @@ header {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%); /* Centers dropdown under parent */
+    transform: translateX(-50%); 
     background-color: var(--card-bg);
     min-width: 180px;
     box-shadow: var(--shadow);
@@ -138,7 +144,6 @@ header {
     background-color: var(--bg-color);
 }
 
-/* Works on hover for desktop, tap for mobile */
 .dropdown:hover .dropdown-content,
 .dropdown:focus-within .dropdown-content {
     display: block;
@@ -162,36 +167,8 @@ header {
 }
 
 /* ==========================================================================
-   Hero Section
+   Buttons
    ========================================================================== */
-.hero {
-    text-align: center;
-    padding: clamp(3rem, 10vw, 6rem) 5% clamp(2rem, 8vw, 4rem);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero h1 {
-    /* Fluid typography: min 2rem, scales with view width, max 3.5rem */
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    opacity: 0.8;
-    margin-bottom: 2rem;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap; /* Stacks buttons on tiny screens */
-}
-
-/* Buttons */
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
@@ -227,8 +204,34 @@ header {
 }
 
 /* ==========================================================================
-   Sections Layout (About, Tools, Articles, FAQ)
+   HOMEPAGE & HUB SECTIONS
    ========================================================================== */
+.hero {
+    text-align: center;
+    padding: clamp(3rem, 10vw, 6rem) 5% clamp(2rem, 8vw, 4rem);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
 .about-section, 
 .tools-section, 
 .articles-section, 
@@ -238,15 +241,32 @@ header {
     margin: 0 auto;
 }
 
+.articles-page-section {
+    margin-top: 4rem; /* Specific margin for the standalone guides page */
+}
+
 .about-section {
     max-width: 800px;
     text-align: center;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    opacity: 0.9;
 }
 
 h2 {
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     margin-bottom: 1.5rem;
     text-align: center;
+}
+
+.hub-title {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-color);
 }
 
 .section-subtitle {
@@ -256,17 +276,12 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* ==========================================================================
-   Card Grids (Tools & Articles)
-   ========================================================================== */
 .card-grid {
     display: grid;
-    /* Auto-fits columns down to a minimum width of 280px */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-/* Shared Card Styles */
 .tool-card, 
 .article-card {
     background-color: var(--card-bg);
@@ -297,17 +312,22 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* Article Specific */
+.article-card {
+    padding: 1.5rem; /* Override for articles to match hub design */
+    justify-content: space-between;
+}
+
 .article-card h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .article-card p {
     opacity: 0.8;
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
-    flex-grow: 1; /* Pushes the 'read more' link to the bottom evenly */
+    line-height: 1.5;
+    flex-grow: 1; 
 }
 
 .read-more {
@@ -320,6 +340,131 @@ h2 {
 .view-all-container {
     text-align: center;
     margin-top: 3rem;
+}
+
+/* ==========================================================================
+   Blog Articles
+   ========================================================================== */
+.article-container {
+    max-width: 720px;
+    margin: 4rem auto 6rem;
+    padding: 0 1.5rem;
+    text-align: left;
+}
+
+.article-header {
+    margin-bottom: 3.5rem;
+    text-align: left;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: var(--text-color, #111827);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.article-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-color, #374151);
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.article-content p {
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+}
+
+.article-content h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text-color, #111827);
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    text-align: left;
+    padding-left: 0.9rem;
+    border-left: 4px solid var(--primary-color, #2563eb);
+}
+
+.article-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--primary-color, #2563eb);
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.article-content strong {
+    font-weight: 600;
+    color: var(--text-color, #111827);
+}
+
+.article-content ul, 
+.article-content ol {
+    margin-top: 0;
+    margin-bottom: 1.75rem;
+    padding-left: 1.5rem;
+}
+
+.article-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+}
+
+/* Tool Promo Callout Box */
+.tool-promo {
+    background-color: var(--card-bg, #f9fafb);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    text-align: left;
+    margin: 3.5rem 0;
+}
+
+.tool-promo h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.tool-promo p {
+    font-size: 1rem;
+    color: var(--text-muted, #6b7280);
+    margin-bottom: 1.5rem;
+}
+
+/* Table Styling for Comparisons */
+.article-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2.5rem 0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.article-table th, 
+.article-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.article-table th {
+    background-color: var(--card-bg, #f9fafb);
+    color: var(--primary-color, #2563eb);
+    font-weight: 600;
+}
+
+.article-table tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
 }
 
 /* ==========================================================================
@@ -357,7 +502,7 @@ h2 {
     content: '+';
     font-size: 1.5rem;
     transition: transform 0.3s ease;
-    flex-shrink: 0; /* Prevents plus sign from squishing on tiny phones */
+    flex-shrink: 0; 
     margin-left: 1rem;
 }
 
@@ -374,12 +519,120 @@ h2 {
 }
 
 .faq-item.active .faq-answer {
-    max-height: 500px; /* Increased for mobile screens where text wraps more */
+    max-height: 500px; 
     padding-bottom: 1.5rem;
     opacity: 1;
     transition: max-height 0.4s ease-in, opacity 0.4s ease-in;
 }
 
+/* ==========================================================================
+   404 Error Page
+   ========================================================================== */
+.error-section {
+    text-align: center;
+    padding: 10vh 5%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-code {
+    font-size: 6rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   Policy & Contact Pages
+   ========================================================================== */
+.policy-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem 5%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.policy-container h1 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.policy-container .last-updated {
+    text-align: center;
+    opacity: 0.6;
+    margin-bottom: 3rem;
+    font-size: 0.9rem;
+}
+
+.policy-container h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.policy-container ul {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.policy-container p {
+    margin-bottom: 1.5rem;
+}
+
+.contact-email {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-email:hover {
+    opacity: 0.9;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; /* Changed from 1000px to standard banner width */
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
+}
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -396,7 +649,7 @@ h2 {
     justify-content: center;
     gap: clamp(1rem, 3vw, 2rem);
     margin-bottom: 1.5rem;
-    flex-wrap: wrap; /* Allows links to stack cleanly on small phones */
+    flex-wrap: wrap; 
 }
 
 .footer-links a {
@@ -418,54 +671,6 @@ h2 {
 }
 
 /* ==========================================================================
-   Mobile-Specific Overrides (Media Queries)
-   ========================================================================== */
-
-/* Tablet & Mobile Nav Reshuffling */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem 5%;
-    }
-    
-    .nav-links {
-        order: 3; /* Pushes the menu below the logo and toggle */
-        width: 100%;
-        margin-top: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    #theme-toggle {
-        margin-left: auto; /* Pushes toggle to the right */
-    }
-
-    .dropdown-content {
-        left: 0;
-        transform: none;
-    }
-}
-
-/* Small Phones (< 480px) */
-@media (max-width: 480px) {
-    .btn {
-        width: 100%; /* Makes buttons full width on tiny screens */
-        text-align: center;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr; /* Forces exactly 1 column */
-    }
-    
-    .faq-question {
-        padding: 1.25rem 1rem;
-    }
-    
-    .faq-answer {
-        padding: 0 1rem;
-    }
-}
-
-/* ==========================================================================
    Animations
    ========================================================================== */
 @keyframes fadeIn {
@@ -480,14 +685,14 @@ h2 {
 .bg-shapes{
   position:fixed;
   inset:0;
-  z-index:-1;          /* sits behind everything */
+  z-index:-1;
   overflow:hidden;
   pointer-events:none;
 }
 .shape{
   position:absolute;
-  border-radius:16px;   /* rounded square; set to 0 for sharp corners */
-  opacity:0.08;         /* keep it subtle */
+  border-radius:16px;
+  opacity:0.08;
   background:linear-gradient(135deg, #6366f1, #8b5cf6);
   animation:spin-float 30s linear infinite;
 }
@@ -525,4 +730,70 @@ h2 {
 
 @media (prefers-reduced-motion: reduce){
   .shape{ animation:none; }
+}
+
+/* ==========================================================================
+   Mobile-Specific Overrides (Media Queries)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .nav-links {
+        order: 3; 
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #theme-toggle {
+        margin-left: auto; 
+    }
+
+    .dropdown-content {
+        left: 0;
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .article-header h1 {
+        font-size: 1.95rem;
+    }
+    
+    .article-content {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+    
+    .article-content h2 {
+        font-size: 1.25rem;
+        margin-top: 2.5rem;
+        padding-left: 0.75rem;
+    }
+    
+    .article-content h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%; 
+        text-align: center;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .faq-question {
+        padding: 1.25rem 1rem;
+    }
+    
+    .faq-answer {
+        padding: 0 1rem;
+    }
 }

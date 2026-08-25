@@ -21,108 +21,7 @@
     <meta property="og:url" content="https://realmultitool.com/guides.html">
     
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Inline styles specifically for the Articles Hub and Trust Footer -->
-    <style>
-        .articles-section {
-            padding: 4rem 5%;
-            max-width: 1000px;
-            margin: 4rem auto 0; /* Margin added to clear a fixed header if applicable */
-        }
-        
-        .articles-section h1 {
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            text-align: center;
-            color: var(--primary-color);
-        }
 
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            font-size: 1.1rem;
-        }
-
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .article-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--primary-color);
-        }
-
-        .article-card h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .article-card p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .read-more {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: auto;
-        }
-
-        /* Trust Footer styling */
-        .trust-footer {
-            text-align: center;
-            padding: 3rem 5% 2rem;
-            margin-top: 4rem;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--card-bg);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--primary-color);
-        }
-
-        .footer-copy {
-            opacity: 0.6;
-            font-size: 0.9rem;
-        }
-    </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKEJXKSF2Y"></script>
     <script>
@@ -132,6 +31,7 @@
 
     gtag('config', 'G-JKEJXKSF2Y');
     </script>
+    
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -140,7 +40,6 @@
             <a href="index.html" class="logo">RealMulti<span>Tool</span></a>
             
             <ul class="nav-links">
-                <!-- Anchor links updated to route back to index.html -->
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
                     <a href="index.html#tools" class="dropbtn">Tools ▾</a>
@@ -163,8 +62,8 @@
 
     <main>
         <!-- Educational Hub / Articles Section -->
-        <section id="articles" class="articles-section fade-in">
-            <h1>All Guides & Resources</h1>
+        <section id="articles" class="articles-section articles-page-section fade-in">
+            <h1 class="hub-title">All Guides & Resources</h1>
             <p class="section-subtitle">Read our latest guides, tips, and tutorials on file management and optimization to get the most out of your digital workflow.</p>
             
             <div class="card-grid">
