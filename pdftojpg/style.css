@@ -115,6 +115,28 @@ header { background-color: var(--nav-bg); box-shadow: var(--shadow); position: r
 h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: center; }
 
 /* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; /* Changed from 1000px to standard banner width */
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
+}
+/* ==========================================================================
    Tool Specific Styles (PDF to JPG)
    ========================================================================== */
 .tool-interface { padding: 0 5% 3rem; max-width: 900px; margin: 0 auto; }
