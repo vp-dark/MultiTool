@@ -81,6 +81,7 @@ h1, h2, h3 { line-height: 1.2; }
 .w-100 { width: 100%; }
 .font-bold { font-weight: bold; }
 .trust-badge { font-size: 0.85rem; opacity: 0.8; color: var(--success-color); }
+.justify-center { justify-content: center !important; }
 
 /* Navigation */
 header { background-color: var(--nav-bg); box-shadow: var(--shadow); position: relative; z-index: 100; transition: var(--transition); }
@@ -112,7 +113,6 @@ header { background-color: var(--nav-bg); box-shadow: var(--shadow); position: r
 .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; }
 .hero p { font-size: clamp(1rem, 2.5vw, 1.2rem); opacity: 0.8; margin-bottom: 2rem; }
 .about-section, .tools-section, .faq-section { padding: clamp(2rem, 5vw, 4rem) 5%; max-width: 1000px; margin: 0 auto; }
-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: center; }
 
 /* ==========================================================================
    Tool Specific Styles
@@ -137,7 +137,6 @@ h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: 
 .setting-group { display: flex; flex-direction: column; gap: 0.5rem; }
 .setting-group label { font-weight: 600; display: flex; justify-content: space-between; }
 
-/* Note: Added 'select' so dropdown menus inherit the exact text input styling */
 .setting-group input[type="text"], 
 .setting-group select { padding: 10px 15px; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--bg-color); color: var(--text-color); font-size: 1rem; }
 .setting-group input[type="text"]:focus,
@@ -176,6 +175,29 @@ h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: 
 .footer-links a { color: var(--text-color); text-decoration: none; font-weight: 500; opacity: 0.8; transition: var(--transition); }
 .footer-links a:hover { opacity: 1; color: var(--primary-color); }
 .footer-copy { opacity: 0.6; font-size: 0.9rem; }
+
+/* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
+}
 
 /* Media Queries */
 @media (max-width: 768px) {
