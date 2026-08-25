@@ -35,11 +35,11 @@
 
  <!-- Articles -->
   <url>
-    <loc>https://realmultitool.com/articles/best-image-dimensions-social-media.html</loc>
+    <loc>https://realmultitool.com/articles/image-dimensions.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://realmultitool.com/articles/how-to-compress-images-for-web.html</loc>
+    <loc>https://realmultitool.com/articles/image-compression.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -51,10 +51,16 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://realmultitool.com/articles/rule-of-thirds-cropping.html</loc>
+    <loc>https://realmultitool.com/articles/rule-of-thirds.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://realmultitool.com/articles/social-media-image-sizes.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://realmultitool.com/articles/linux.html</loc>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
