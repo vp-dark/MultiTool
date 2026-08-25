@@ -48,7 +48,7 @@ body {
 }
 
 /* ==========================================================================
-   Navigation (Identical to root)
+   Navigation
    ========================================================================== */
 header {
     background-color: var(--nav-bg);
@@ -172,6 +172,29 @@ header {
 
 .secondary-btn { background-color: transparent; color: var(--text-color); border: 2px solid var(--border-color); }
 .secondary-btn:hover { border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-2px); }
+
+/* ==========================================================================
+   Ad Banner Containers (Mobile Optimized)
+   ========================================================================== */
+.ad-container {
+    width: 100%;
+    max-width: 1000px; /* Changed from 1000px to standard banner width */
+    margin: 2rem auto; /* The 'auto' keeps it perfectly centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    max-height: 200px; /* Prevents the ad from getting too tall and covering the screen */
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: contain; /* Ensures the image doesn't stretch weirdly */
+}
 
 /* ==========================================================================
    Cropper Specific Styles
@@ -402,7 +425,7 @@ h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: 
    ========================================================================== */
 @media (max-width: 900px) {
     .cropper-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stacks controls below cropper canvas on tablets/mobile */
     }
     .canvas-container {
         height: 450px;
@@ -429,3 +452,12 @@ h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom: 1.5rem; text-align: 
     to { opacity: 1; transform: translateY(0); }
 }
 .fade-in { animation: fadeIn 0.8s ease forwards; }
+
+/* Ensures your custom ad images and videos resize perfectly on mobile */
+.ad-container img, 
+.ad-container video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: gives your ads nice rounded corners */
+    display: block;
+}
